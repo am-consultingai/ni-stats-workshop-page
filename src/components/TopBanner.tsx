@@ -2,7 +2,7 @@ import React from "react";
 
 const BASE = import.meta.env.BASE_URL;
 const AM_LOGO = `${BASE}img/am-logo.png`;
-const NI_LOGO = `${BASE}img/natural-intelligence.svg`;
+const NI_LOGO = `${BASE}img/ni-logo.png`;
 const AM_URL = "https://www.amconsultingai.com";
 
 const NAV: [string, string][] = [
@@ -27,10 +27,13 @@ export default function TopBanner() {
           href={AM_URL}
           target="_blank"
           rel="noreferrer"
-          className="shrink-0 transition-opacity hover:opacity-80"
+          className="shrink-0 transition-opacity hover:opacity-90"
           aria-label="AM Consulting — amconsultingai.com"
         >
-          <img src={AM_LOGO} alt="AM Consulting" className="h-8 md:h-9 w-auto object-contain" />
+          {/* Dark logo → sits on a bright chip so it reads on the dark banner */}
+          <span className="inline-flex items-center rounded-lg bg-white px-3 py-1.5 shadow-sm">
+            <img src={AM_LOGO} alt="AM Consulting" className="h-6 md:h-7 w-auto object-contain" />
+          </span>
         </a>
 
         <nav className="hidden md:flex items-center gap-1">
